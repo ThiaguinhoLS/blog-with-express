@@ -1,0 +1,22 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout=3000",
+    "coverage": "nyc npm test"
+  },
+  "keywords": [],
+  "author": "ThiaguinhoLS",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
