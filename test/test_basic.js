@@ -10,6 +10,7 @@ describe('Home page test render', () => {
     chai.request(server)
     .get('/')
     .end((err, res) => {
+      expect(res).to.have.status(200);
       done();
     });
   });

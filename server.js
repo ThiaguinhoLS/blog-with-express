@@ -1,7 +1,7 @@
 const app = require('./app/app');
 const port = 3000;
 
-app.route('/', (req, res, next) => {
+app.get('/', (req, res, next) => {
   res.send('Home page');
 });
 

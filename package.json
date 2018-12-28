@@ -4,6 +4,7 @@
   "description": "Blog",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "mocha --timeout=3000",
     "coverage": "nyc npm test"
   },
