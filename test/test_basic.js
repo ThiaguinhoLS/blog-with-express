@@ -5,14 +5,30 @@ const expect = chai.expect;
 
 chai.use(chaiHttp);
 
-describe('Home page test render', () => {
-  it('Testing status code', done => {
+describe('Users endpoint', () => {
+
+  it('Route: /users Method: GET Description: Return all users', done => {
     chai.request(server)
-    .get('/')
-    .end((err, res) => {
-      expect(res).to.have.status(200);
+    .get('/users')
+    .end((err, response) => {
+      expect(response).to.have.status(200);
       done();
     });
   });
+
+  it('Route: /users Method: POST Description: Added a user', done => {
+    const user = {
+      username: 'tyrion',
+      password: 'lannister'
+    };
+    chai.request(server)
+    .post('/users')
+    .send(user)
+    .end((err, response) => {
+      expect(response).to.have.status(201);
+      done();
+    });
+  });
+
 });
 

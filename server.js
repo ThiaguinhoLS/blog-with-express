@@ -1,9 +1,10 @@
 const app = require('./app/app');
+const users = require('./app/routes/users');
 const port = 3000;
 
-app.get('/', (req, res, next) => {
-  res.send('Home page');
-});
+app.route('/users')
+  .get(users.get)
+  .post(users.post)
 
 const server = app.listen(port);
 
