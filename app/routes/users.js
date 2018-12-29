@@ -4,7 +4,7 @@ const users = [
 ];
 
 exports.get = (request, response, next) => {
-  response.json({ users });
+  response.status(200).json({ users });
 };
 
 exports.post = (request, response, next) => {
@@ -25,6 +25,9 @@ exports.put = (request, response, next) => {
       Object.assign(user, request.body);
     }
   });
+  response.status(200).json({
+    message: 'User updated successfully'
+  });
 };
 
 exports.delete = (request, response, next) => {
@@ -32,6 +35,9 @@ exports.delete = (request, response, next) => {
     if (user._id == request.params.id) {
       users.splice(index, 1);
     }
+  });
+  response.status(200).json({
+    message: 'User deleted successfully'
   });
 };
 

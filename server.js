@@ -4,7 +4,11 @@ const port = 3000;
 
 app.route('/users')
   .get(users.get)
-  .post(users.post)
+  .post(users.post);
+
+app.route('/users/:id')
+  .put(users.put)
+  .delete(users.delete);
 
 const server = app.listen(port);
 
